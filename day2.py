@@ -7,49 +7,49 @@ for index, row in df.iterrows():
     round = [row.p1, row.p2]
     rounds.append(round)
 
-# points = 0
-# for round in rounds:
-#     match round:
-#         case ["A", "X"]:
-#             points += 4
-#         case ["A", "Y"]:
-#             points += 8
-#         case ["A", "Z"]:
-#             points += 3
-#         case ["B", "X"]:
-#             points += 1
-#         case ["B", "Y"]:
-#             points += 5
-#         case ["B", "Z"]:
-#             points += 9
-#         case ["C", "X"]:
-#             points += 7
-#         case ["C", "Y"]:
-#             points += 2
-#         case ["C", "Z"]:
-#             points += 6
-
-points = 0
-for round in rounds:
-    match round:
+points1 = 0
+for round1 in rounds:
+    match round1:
         case ["A", "X"]:
-            points += 4
+            points1 += 4
         case ["A", "Y"]:
-            points += 8
+            points1 += 8
         case ["A", "Z"]:
-            points += 3
+            points1 += 3
         case ["B", "X"]:
-            points += 1
+            points1 += 1
         case ["B", "Y"]:
-            points += 5
+            points1 += 5
         case ["B", "Z"]:
-            points += 9
+            points1 += 9
         case ["C", "X"]:
-            points += 7
+            points1 += 7
         case ["C", "Y"]:
-            points += 2
+            points1 += 2
         case ["C", "Z"]:
-            points += 6
-print(points)
+            points1 += 6
 
-outcome_score = {"X": 0, "Y": 3, "Z": 6}
+print(points1)
+
+points2 = 0
+for round2 in rounds:
+    match round2:
+        case ["A", "X"]:
+            points2 += 3
+        case ["A", "Y"]:
+            points2 += 4
+        case ["A", "Z"]:
+            points2 += 8
+        case ["B", "X"]:
+            points2 += 1
+        case ["B", "Y"]:
+            points2 += 5
+        case ["B", "Z"]:
+            points2 += 9
+        case ["C", "X"]:
+            points2 += 2
+        case ["C", "Y"]:
+            points2 += 6
+        case ["C", "Z"]:
+            points2 += 7
+print(points2)

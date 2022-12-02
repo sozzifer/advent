@@ -15,4 +15,4 @@ print(max(day1_dict.values()))
 
 top3 = list(day1_dict.values())
 top3.sort(reverse=True)
-print(top3[:3])
+print(sum(top3[:3]))
