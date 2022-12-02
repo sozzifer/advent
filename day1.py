@@ -12,3 +12,7 @@ for calorie in calories:
     key += 1
 
 print(max(day1_dict.values()))
+
+top3 = list(day1_dict.values())
+top3.sort(reverse=True)
+print(top3[:3])
