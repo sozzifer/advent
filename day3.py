@@ -22,7 +22,7 @@ def p1(data):
         total += index + 1
     print(total)
 
-# p1(data)
+p1(data)
 
 def p2(data):
     matches = []
