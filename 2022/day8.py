@@ -1,4 +1,4 @@
-with open("day8ex.txt") as f:
+with open("2022/day8ex.txt") as f:
     data = f.read().split("\n")
 
 tree_grid = []
@@ -6,14 +6,16 @@ for row in data:
     row = [eval(i) for i in [*row]]
     tree_grid.append(row)
 
-num_rows_to_check_i = len(tree_grid) // 2
-num_cols_to_check_j = len(tree_grid[0]) // 2
-print(num_rows_to_check_i)
-print(num_cols_to_check_j)
-for i in range(num_rows_to_check_i):
-    for j in range(num_cols_to_check_j):
-        print(tree_grid[i-1][j-1])
-        print
+print(data)
+print(tree_grid)
+# num_rows_to_check_i = len(tree_grid) // 2
+# num_cols_to_check_j = len(tree_grid[0]) // 2
+# print(num_rows_to_check_i)
+# print(num_cols_to_check_j)
+# for i in range(num_rows_to_check_i):
+#     for j in range(num_cols_to_check_j):
+#         print(tree_grid[i-1][j-1])
+#         print
 """
 j = horizontal position
  0  1  2  3  4

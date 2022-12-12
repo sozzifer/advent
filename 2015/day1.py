@@ -10,11 +10,11 @@ from pprint import pprint as pp
 )))     -3
 )())()) -3
 """
-with open("day1.txt") as f:
+with open("2015/day1.txt") as f:
     data = f.read().replace("\n", "")
 
 moves = [*data]
-# print(moves)
+print(moves)
 floor = 0
 floor_list = []
 for m in moves:
@@ -25,5 +25,5 @@ for m in moves:
         floor -= 1
         floor_list.append(str(floor))
 
-pp(floor_list)
+# pp(floor_list)
 print(floor_list.index("-1"))
