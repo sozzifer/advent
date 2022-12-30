@@ -1,5 +1,44 @@
 from typing import Dict, Set, List
 from collections import defaultdict
+from itertools import permutations
+
+# ChrisPenner Advent-Of-Code-Polyglot
+# Store distances
+distances = {}
+
+# Get all possible places
+places = set()
+
+with open('2015/day9.txt') as f:
+    for line in f:
+        parts = line.split(' ')
+        # Unpack values
+        frm, _, to, _, amount = parts
+        amount = int(amount.strip())
+        # Store distance between each set of places
+        distances[frm, to] = distances[to, frm] = amount
+        # Add to our set of valid places
+        places.add(frm)
+        places.add(to)
+
+# Get every possible route
+possibilities = permutations(places)
+# Store route distances as we compute them
+totals = []
+
+# Calculate total distance for every route
+for route in possibilities:
+    total = 0
+    for i, frm in enumerate(route):
+        if i == len(route) - 1:
+            break
+        # Get the next element
+        to = route[i+1]
+        total += distances[(frm, to)]
+    totals.append(total)
+
+part1 = min(totals)
+part2 = max(totals)
 
 
 class Graph:
@@ -52,19 +91,19 @@ class Graph:
         return all_paths
 
 
-if __name__ == '__main__':
-    with open("2015/day9.txt") as f:
-        data = f.read().split("\n")
-    edges = []
-    for line in data:
-        line = line.split(" ")
-        edges.append((line[0], line[2], int(line[4])))
+# if __name__ == '__main__':
+#     with open("2015/day9.txt") as f:
+#         data = f.read().split("\n")
+#     edges = []
+#     for line in data:
+#         line = line.split(" ")
+#         edges.append((line[0], line[2], int(line[4])))
 
-    graph = Graph(edges)
-    hamiltonian_path = graph.get_hamiltonian_path(start="Tristram")
+#     graph = Graph(edges)
+#     hamiltonian_path = graph.get_hamiltonian_path(start="Tristram")
 
-    for path in hamiltonian_path:
-        print("->".join(map(str, reversed(path))))
+#     for path in hamiltonian_path:
+#         print("->".join(map(str, reversed(path))))
 
 
 # class Graph():
